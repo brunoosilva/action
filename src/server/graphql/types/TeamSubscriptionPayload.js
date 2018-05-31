@@ -30,7 +30,6 @@ import VoteForReflectionGroupPayload from 'server/graphql/types/VoteForReflectio
 import NewMeetingCheckInPayload from 'server/graphql/types/NewMeetingCheckInPayload'
 import AutoGroupReflectionsPayload from 'server/graphql/types/AutoGroupReflectionsPayload'
 import DragReflectionPayload from 'server/graphql/types/DragReflectionPayload'
-import DragDiscussionTopicPayload from 'server/graphql/types/DragDiscussionTopicPayload'
 
 const types = [
   AcceptTeamInvitePayload,
@@ -39,7 +38,6 @@ const types = [
   AutoGroupReflectionsPayload,
   CreateReflectionPayload,
   CreateReflectionGroupPayload,
-  DragDiscussionTopicPayload,
   DragReflectionPayload,
   EditReflectionPayload,
   EndMeetingPayload,

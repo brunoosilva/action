@@ -26,7 +26,6 @@ import {promoteNewMeetingFacilitatorTeamOnNext} from 'universal/mutations/Promot
 import {editReflectionTeamUpdater} from 'universal/mutations/EditReflectionMutation'
 import {updateReflectionLocationTeamUpdater} from 'universal/mutations/UpdateReflectionLocationMutation'
 import {endNewMeetingTeamOnNext} from 'universal/mutations/EndNewMeetingMutation'
-import {dragDiscussionTopicTeamUpdater} from 'universal/mutations/DragDiscussionTopicMutation'
 
 const subscription = graphql`
   subscription TeamSubscription {
@@ -39,7 +38,6 @@ const subscription = graphql`
       ...AutoGroupReflectionsMutation_team @relay(mask: false)
       ...CreateReflectionMutation_team @relay(mask: false)
       ...DragReflectionMutation_team @relay(mask: false)
-      ...DragDiscussionTopicMutation_team @relay(mask: false)
       ...EditReflectionMutation_team @relay(mask: false)
       ...EndMeetingMutation_team @relay(mask: false)
       ...KillMeetingMutation_team @relay(mask: false)
@@ -104,9 +102,6 @@ const TeamSubscription = (environment, queryVariables, subParams) => {
           createReflectionTeamUpdater(payload, store)
           break
         case 'DragReflectionPayload':
-          break
-        case 'DragDiscussionTopicPayload':
-          dragDiscussionTopicTeamUpdater(payload, {store})
           break
         case 'RemoveTeamMemberSelfPayload':
           removeTeamMemberTeamUpdater(payload, store, viewerId, options)

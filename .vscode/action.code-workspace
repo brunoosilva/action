@@ -14,7 +14,6 @@
 		},
 		"javascript.validate.enable": false,
 		"editor.formatOnSave": false,
-		"editor.tabSize": 2,
 		"javascript.format.insertSpaceAfterConstructor": true,
 		"javascript.format.insertSpaceBeforeFunctionParenthesis": true,
 		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,

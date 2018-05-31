@@ -7,12 +7,8 @@ import styled from 'react-emotion'
 const lineHeight = ui.navTopicLineHeight
 
 const ItemRoot = styled('div')(
-  ({isActive, isComplete, isDisabled, isDragging, onClick}) => ({
-    backgroundColor: isActive
-      ? ui.navMenuLightBackgroundColorActive
-      : isDragging
-        ? appTheme.palette.light50l
-        : '#fff',
+  ({isActive, isComplete, isDisabled, onClick}) => ({
+    backgroundColor: isActive && ui.navMenuLightBackgroundColorActive,
     boxShadow: isActive && `inset ${ui.navMenuLeftBorderWidth} 0 0 ${ui.palette.mid}`,
     color: onClick ? ui.colorLink : ui.colorText,
     display: 'flex',
@@ -77,7 +73,6 @@ const MeetingSubnavItem = (props) => {
     isActive,
     isComplete,
     isDisabled,
-    isDragging,
     isUnsyncedFacilitatorStage,
     label,
     metaContent,
@@ -90,7 +85,6 @@ const MeetingSubnavItem = (props) => {
       isActive={isActive}
       isComplete={isComplete}
       isDisabled={isDisabled}
-      isDragging={isDragging}
       isUnsyncedFacilitatorStage={isUnsyncedFacilitatorStage}
       onClick={!isDisabled ? onClick : null}
     >

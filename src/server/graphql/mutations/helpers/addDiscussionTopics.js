@@ -5,7 +5,6 @@ import {DISCUSS} from 'universal/utils/constants'
 export const makeDiscussionStage = (
   reflectionGroupId: string,
   meetingId: string,
-  sortOrder: number,
   placeholderId: ?string
 ) => ({
   id: placeholderId || shortid.generate(),
@@ -15,7 +14,6 @@ export const makeDiscussionStage = (
   isNavigableByFacilitator: true,
   phaseType: DISCUSS,
   reflectionGroupId,
-  sortOrder,
   startAt: placeholderId ? new Date() : undefined,
   viewCount: placeholderId ? 1 : 0
 })
@@ -37,7 +35,7 @@ const addDiscussionTopics = async (meeting: Object, dataLoader: Object): Object 
   const importantReflectionGroups = mapGroupsToStages(reflectionGroups)
   const nextDiscussStages = importantReflectionGroups.map((reflectionGroup, idx) => {
     const placeholderId = idx === 0 ? placeholderStage.id : undefined
-    return makeDiscussionStage(reflectionGroup.id, meetingId, idx, placeholderId)
+    return makeDiscussionStage(reflectionGroup.id, meetingId, placeholderId)
   })
   const firstDiscussStage = nextDiscussStages[0]
   if (!firstDiscussStage || !placeholderStage) return {}

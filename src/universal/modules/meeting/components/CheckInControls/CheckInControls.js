@@ -83,7 +83,7 @@ CheckInControls.propTypes = {
   bindHotkey: PropTypes.func.isRequired,
   checkInPressFactory: PropTypes.func.isRequired,
   currentMemberName: PropTypes.string,
-  localPhaseItem: PropTypes.any.isRequired,
+  localPhaseItem: PropTypes.number,
   nextMemberName: PropTypes.string,
   nextPhaseName: PropTypes.string
 }
